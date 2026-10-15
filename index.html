@@ -91,6 +91,7 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
+            /* FOTO PRINCIPAL ACTUALIZADA */
             background-image: url('Copia de Post IG bulk cream_20261015_091200_0000.png'); 
             background-size: cover;
             background-position: center;
@@ -694,12 +695,12 @@
         .details-section {
             background-color: #292c1b; 
             color: #ffffff; 
-            padding: 130px 20px 160px 20px; /* Ampliado para alojar los encajes superior e inferior */
+            padding: 100px 20px 60px 20px; 
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            position: relative; /* Necesario para los encajes */
+            position: relative; 
         }
 
         .details-container {
@@ -710,7 +711,6 @@
             gap: 40px;
         }
 
-        /* Elementos Centrados */
         .detail-row {
             display: flex;
             flex-direction: column;
@@ -838,11 +838,40 @@
             font-weight: normal;
         }
 
+        /* --- EFECTO NUBES (SCALLOPS) SOBRE LA FOTO FINAL --- */
+        .lace-overlap-dark {
+            position: absolute;
+            bottom: -19px; /* Solapa perfectamente la foto sin dejar línea blanca */
+            left: 0;
+            width: 100%;
+            height: 20px;
+            z-index: 10;
+            background-image: radial-gradient(circle at 20px 0, #292c1b 20px, transparent 21px);
+            background-size: 40px 20px;
+            background-repeat: repeat-x;
+            display: flex;
+            justify-content: center;
+        }
+
+        .lace-center-overlap {
+            position: absolute;
+            top: -40px; 
+            width: 80px;
+            height: 80px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            z-index: 11;
+            background-image: radial-gradient(transparent 40%, rgba(200,200,200,0.3) 45%, transparent 50%);
+            background-size: 10px 10px;
+        }
+
         /* --- FOTO FINAL PANTALLA COMPLETA --- */
         .footer-image-section {
+            position: relative;
             width: 100%;
             line-height: 0; 
-            background-color: #ffffff; /* Fondo blanco para conectar con el encaje */
+            background-color: #ffffff; 
+            z-index: 1;
         }
 
         .footer-image-section img {
@@ -906,8 +935,8 @@
             .rc-divider { display: flex; }
             .rc-diamond { font-size: 1rem; }
 
-            /* Ajustes para encajes en la sección de detalles finales */
-            .details-section { padding: 110px 15px 150px 15px; }
+            /* Ajustes finales de espaciado para móviles */
+            .details-section { padding: 90px 15px 50px 15px; }
             .detail-icon-stroke, .detail-icon-fill { margin-bottom: 10px; width: 40px; height: 40px; }
             .detail-title { font-size: 0.95rem; }
             .detail-text { font-size: 0.9rem; }
@@ -917,7 +946,6 @@
     </style>
 </head>
 <body>
-
     <!-- SECCIÓN 1: Hero -->
     <section class="hero">
         <div class="content">
@@ -1024,7 +1052,7 @@
         </a>
     </section>
 
-    <!-- SECCIÓN 5: GALERÍA DE FOTOS -->
+    <!-- SECCIÓN 5: GALERÍA DE FOTOS ACTUALIZADA -->
     <section class="gallery-section">
         <h2 class="gallery-title">Nuestros momentos</h2>
         
@@ -1111,7 +1139,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 7: DETALLES FINALES (Fondo Verde Oscuro con Encajes) -->
+    <!-- SECCIÓN 7: DETALLES FINALES (Fondo Verde Oscuro con Encajes superpuestos a la foto) -->
     <section class="details-section">
         
         <!-- Encaje Superior Invertido -->
@@ -1189,17 +1217,16 @@
         <p class="detail-title" style="letter-spacing: 4px; margin-top:20px;">Esperamos celebrar este día contigo</p>
         <p class="closing-text">Gis & Roy</p>
 
-        <!-- Encaje Inferior para transicionar a la foto blanca -->
-        <div class="lace-bottom">
-            <div class="lace-center-detail"></div>
+        <!-- EFECTO NUBES (SCALLOPS) PERFECTAMENTE SUPERPUESTO A LA FOTO INFERIOR -->
+        <div class="lace-overlap-dark">
+            <div class="lace-center-overlap"></div>
         </div>
     </section>
 
     <!-- FOTO FINAL A PANTALLA COMPLETA -->
     <section class="footer-image-section">
-        <img src="pexels-vinicius-quaresma-511530024-32532559.jpg" alt="Foto de despedida Gis y Roy">
+        <img src="pexels-vinicius-quaresma-511530024-32532549.jpg" alt="Foto de despedida Gis y Roy">
     </section>
-
     <!-- SCRIPTS -->
     <script>
         const weddingDate = new Date("Dec 12, 2027 17:00:00").getTime();
@@ -1266,4 +1293,3 @@
 
 </body>
 </html>
-         
