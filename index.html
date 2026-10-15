@@ -91,7 +91,6 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            /* PRIMERA FOTO ACTUALIZADA */
             background-image: url('pexels-vinicius-quaresma-511530024-32532559.jpg'); 
             background-size: cover;
             background-position: center;
@@ -558,7 +557,6 @@
         .dc-title-main {
             font-family: 'Great Vibes', cursive;
             font-size: 3rem;
-            /* COLOR ACTUALIZADO AL VERDE OSCURO */
             color: #292c1b; 
             margin: 0 0 15px 0; 
             font-weight: normal;
@@ -693,15 +691,15 @@
         }
 
         /* --- SECCIÓN 7: DETALLES FINALES --- */
-        /* FONDO ACTUALIZADO A VERDE OSCURO (#292c1b) */
         .details-section {
             background-color: #292c1b; 
-            color: #ffffff; /* Letras generales blancas/claras */
-            padding: 80px 20px 60px 20px; 
+            color: #ffffff; 
+            padding: 130px 20px 160px 20px; /* Ampliado para alojar los encajes superior e inferior */
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            position: relative; /* Necesario para los encajes */
         }
 
         .details-container {
@@ -712,40 +710,42 @@
             gap: 40px;
         }
 
+        /* Elementos Centrados */
         .detail-row {
             display: flex;
-            align-items: flex-start;
-            text-align: left;
-            gap: 25px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 15px;
         }
 
-        /* Colores invertidos para fondo oscuro */
         .detail-icon-stroke {
             width: 45px;
             height: 45px;
-            stroke: #d4c4a8; /* Dorado */
+            stroke: #d4c4a8; 
             fill: none;
             stroke-width: 2;
-            flex-shrink: q0;
-            margin-top: 5px;
+            flex-shrink: 0;
+            margin-bottom: 10px;
         }
 
         .detail-icon-fill {
             width: 45px;
             height: 45px;
-            fill: #d4c4a8; /* Dorado */
+            fill: #d4c4a8; 
             flex-shrink: 0;
-            margin-top: 5px;
+            margin-bottom: 10px;
         }
 
         .detail-content {
             flex: 1;
+            width: 100%;
         }
 
         .detail-title {
             font-size: 1.05rem;
             letter-spacing: 2px;
-            color: #d4c4a8; /* Dorado */
+            color: #d4c4a8; 
             text-transform: uppercase;
             margin: 0 0 10px 0;
             font-weight: 600;
@@ -753,16 +753,18 @@
 
         .detail-text {
             font-size: 0.95rem;
-            color: #eeeeee; /* Texto claro */
+            color: #eeeeee; 
             line-height: 1.6;
             margin: 0;
         }
 
         .seats-box {
-            display: inline-flex;
+            display: flex;
+            justify-content: center;
             align-items: center;
             gap: 15px;
             margin-top: 15px;
+            width: 100%;
         }
 
         .seats-number {
@@ -784,9 +786,11 @@
 
         .envelope-box {
             display: flex;
+            justify-content: center;
             align-items: center;
             gap: 10px;
             margin-top: 20px;
+            width: 100%;
         }
 
         .envelope-icon {
@@ -822,6 +826,7 @@
         .adults-only {
             text-align: center;
             margin-top: 40px;
+            width: 100%;
         }
 
         .closing-text {
@@ -837,7 +842,7 @@
         .footer-image-section {
             width: 100%;
             line-height: 0; 
-            background-color: #292c1b; 
+            background-color: #ffffff; /* Fondo blanco para conectar con el encaje */
         }
 
         .footer-image-section img {
@@ -901,12 +906,11 @@
             .rc-divider { display: flex; }
             .rc-diamond { font-size: 1rem; }
 
-            .details-section { padding: 60px 15px; }
-            .detail-row { gap: 15px; flex-direction: column; align-items: center; text-align: center; }
+            /* Ajustes para encajes en la sección de detalles finales */
+            .details-section { padding: 110px 15px 150px 15px; }
             .detail-icon-stroke, .detail-icon-fill { margin-bottom: 10px; width: 40px; height: 40px; }
             .detail-title { font-size: 0.95rem; }
             .detail-text { font-size: 0.9rem; }
-            .envelope-box, .seats-box { justify-content: center; }
             .whatsapp-btn { padding: 10px 25px; font-size: 0.75rem; }
             .closing-text { font-size: 2.5rem; }
         }
@@ -914,7 +918,7 @@
 </head>
 <body>
 
-        <!-- SECCIÓN 1: Hero -->
+    <!-- SECCIÓN 1: Hero -->
     <section class="hero">
         <div class="content">
             <div class="subtitle">The Wedding Day</div>
@@ -1020,7 +1024,7 @@
         </a>
     </section>
 
-    <!-- SECCIÓN 5: GALERÍA DE FOTOS ACTUALIZADA -->
+    <!-- SECCIÓN 5: GALERÍA DE FOTOS -->
     <section class="gallery-section">
         <h2 class="gallery-title">Nuestros momentos</h2>
         
@@ -1106,8 +1110,15 @@
             </div>
         </div>
     </section>
-       <!-- SECCIÓN 7: DETALLES FINALES (Fondo Verde Oscuro) -->
+
+    <!-- SECCIÓN 7: DETALLES FINALES (Fondo Verde Oscuro con Encajes) -->
     <section class="details-section">
+        
+        <!-- Encaje Superior Invertido -->
+        <div class="lace-top-inverted">
+            <div class="lace-center-detail"></div>
+        </div>
+
         <div class="details-container">
             
             <!-- Bloque Cupos -->
@@ -1177,6 +1188,11 @@
 
         <p class="detail-title" style="letter-spacing: 4px; margin-top:20px;">Esperamos celebrar este día contigo</p>
         <p class="closing-text">Gis & Roy</p>
+
+        <!-- Encaje Inferior para transicionar a la foto blanca -->
+        <div class="lace-bottom">
+            <div class="lace-center-detail"></div>
+        </div>
     </section>
 
     <!-- FOTO FINAL A PANTALLA COMPLETA -->
@@ -1250,3 +1266,4 @@
 
 </body>
 </html>
+         
