@@ -91,7 +91,8 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background-image: url('Simple Minimalist Save the Date Wedding Invitation_20261014_092408_0000.png'); 
+            /* PRIMERA FOTO ACTUALIZADA */
+            background-image: url('pexels-vinicius-quaresma-511530024-32532559.jpg'); 
             background-size: cover;
             background-position: center;
             border: 6px solid #fdfdfd; 
@@ -557,7 +558,8 @@
         .dc-title-main {
             font-family: 'Great Vibes', cursive;
             font-size: 3rem;
-            color: #d4c4a8; 
+            /* COLOR ACTUALIZADO AL VERDE OSCURO */
+            color: #292c1b; 
             margin: 0 0 15px 0; 
             font-weight: normal;
         }
@@ -656,7 +658,6 @@
         }
 
         .c-blanco { background-color: #ffffff; }
-        /* 2. COLOR CAMBIADO A VERDE OLIVA (#595b36) */
         .c-oliva { background-color: #595b36; } 
         .c-rojo { background-color: #d82b3a; } 
         .c-gris { background-color: #cccccc; } 
@@ -692,9 +693,11 @@
         }
 
         /* --- SECCIÓN 7: DETALLES FINALES --- */
+        /* FONDO ACTUALIZADO A VERDE OSCURO (#292c1b) */
         .details-section {
-            background-color: #faf9f6; 
-            padding: 80px 20px 40px 20px; /* Reducido un poco abajo para la foto */
+            background-color: #292c1b; 
+            color: #ffffff; /* Letras generales blancas/claras */
+            padding: 80px 20px 60px 20px; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -706,7 +709,7 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 40px;
         }
 
         .detail-row {
@@ -716,20 +719,21 @@
             gap: 25px;
         }
 
+        /* Colores invertidos para fondo oscuro */
         .detail-icon-stroke {
             width: 45px;
             height: 45px;
-            stroke: #292c1b; 
+            stroke: #d4c4a8; /* Dorado */
             fill: none;
             stroke-width: 2;
-            flex-shrink: 0;
+            flex-shrink: q0;
             margin-top: 5px;
         }
 
         .detail-icon-fill {
             width: 45px;
             height: 45px;
-            fill: #292c1b; 
+            fill: #d4c4a8; /* Dorado */
             flex-shrink: 0;
             margin-top: 5px;
         }
@@ -741,7 +745,7 @@
         .detail-title {
             font-size: 1.05rem;
             letter-spacing: 2px;
-            color: #292c1b;
+            color: #d4c4a8; /* Dorado */
             text-transform: uppercase;
             margin: 0 0 10px 0;
             font-weight: 600;
@@ -749,4 +753,500 @@
 
         .detail-text {
             font-size: 0.95rem;
+            color: #eeeeee; /* Texto claro */
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .seats-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .seats-number {
+            border: 1px solid #d4c4a8;
+            padding: 8px 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+            border-radius: 4px;
+        }
+
+        .seats-label {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: #d4c4a8;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .envelope-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .envelope-icon {
+            width: 28px;
+            height: 28px;
+            stroke: #d4c4a8;
+            fill: none;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #d4c4a8; 
+            color: #292c1b; 
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 25px; 
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #ffffff; 
+            color: #292c1b;
+        }
+
+        .adults-only {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .closing-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: #d4c4a8;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        /* --- FOTO FINAL PANTALLA COMPLETA --- */
+        .footer-image-section {
+            width: 100%;
+            line-height: 0; 
+            background-color: #292c1b; 
+        }
+
+        .footer-image-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+
+        /* Responsividad para móviles */
+        @media (max-width: 768px) {
+            .lb-arrow { font-size: 2.5rem; padding: 10px; }
+            .lb-arrow-prev { left: 5px; }
+            .lb-arrow-next { right: 5px; }
+        }
+
+        @media (max-width: 600px) {
+            .title { font-size: 3.5rem; }
+            .frame-container { width: 220px; height: 310px; }
+            .date { font-size: 1rem; margin-top: 25px; }
+            .rsvp-btn { padding: 8px 25px; font-size: 0.8rem; margin-top: 20px;}
             
+            .love-story { padding: 25px 15px 30px 15px; }
+            .audio-player-container { margin-bottom: 40px; } 
+            .story-subtitle { font-size: 0.7rem; margin-bottom: 8px; }
+            .story-title { font-size: 1.8rem; margin-bottom: 12px; }
+            .story-text { font-size: 0.85rem; line-height: 1.4; margin-bottom: 12px; }
+            .story-divider { margin: 12px 0; }
+            .initials { font-size: 2.2rem; }
+
+            .countdown-section { padding: 110px 10px 150px 10px; }
+            .countdown-title { font-size: 2rem; margin-bottom: 25px; }
+            .timer-container { gap: 10px; } 
+            .time-box { padding: 12px 10px; }
+            .time-box span.number { font-size: 1.5rem; }
+            .time-box span.label { font-size: 0.65rem; letter-spacing: 1px; }
+            .calendar-btn { font-size: 0.75rem; padding: 10px 20px; margin-top: 35px; }
+
+            .location-section { padding: 40px 15px 60px 15px; }
+            .event-time { font-size: 0.8rem; }
+            .event-title { font-size: 1.8rem; }
+            .heart-divider { margin: 20px auto; }
+            .event-place { font-size: 1.15rem; }
+            .event-address { font-size: 0.85rem; margin-bottom: 25px; }
+            .maps-btn { padding: 10px 25px; font-size: 0.75rem; }
+
+            .gallery-section { padding: 50px 0; }
+            .gallery-title { font-size: 3.2rem; margin-bottom: 30px; }
+            .carousel-track img { width: 240px; height: 340px; }
+            .close-lightbox { top: 15px; right: 20px; font-size: 35px; }
+
+            .dresscode-section { padding: 60px 10px; }
+            .dc-title-main { font-size: 2.4rem; }
+            .reserved-colors-container { gap: 5px; padding-top: 25px; }
+            .rc-group-title { font-size: 0.8rem; }
+            .rc-group-title::before, .rc-group-title::after { width: 10px; margin: 0 5px; }
+            .rc-subtitle { font-size: 0.55rem; margin-bottom: 15px; letter-spacing: 1px; }
+            .rc-circles { gap: 5px; }
+            .rc-circle { width: 35px; height: 35px; }
+            .rc-label { font-size: 0.45rem; letter-spacing: 0px; }
+            .rc-divider { display: flex; }
+            .rc-diamond { font-size: 1rem; }
+
+            .details-section { padding: 60px 15px; }
+            .detail-row { gap: 15px; flex-direction: column; align-items: center; text-align: center; }
+            .detail-icon-stroke, .detail-icon-fill { margin-bottom: 10px; width: 40px; height: 40px; }
+            .detail-title { font-size: 0.95rem; }
+            .detail-text { font-size: 0.9rem; }
+            .envelope-box, .seats-box { justify-content: center; }
+            .whatsapp-btn { padding: 10px 25px; font-size: 0.75rem; }
+            .closing-text { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+        <!-- SECCIÓN 1: Hero -->
+    <section class="hero">
+        <div class="content">
+            <div class="subtitle">The Wedding Day</div>
+            <h1 class="title">Gis & Roy</h1>
+            
+            <div class="frame-container">
+                <div class="photo"></div>
+            </div>
+            
+            <div class="date">12.12.2027</div>
+            
+            <a href="#" class="rsvp-btn">RSVP NOW</a>
+        </div>
+        
+        <div class="lace-bottom">
+            <div class="lace-center-detail"></div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: Historia de Amor -->
+    <section class="love-story">
+        <div class="story-container">
+            
+            <div class="audio-player-container">
+                <audio controls>
+                    <source src="nuestra-cancion.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+            
+            <span class="story-subtitle">Con la bendición de Dios</span>
+            <h2 class="story-title">¡NOS CASAMOS!</h2>
+            
+            <p class="story-text">
+                Nuestra historia de amor fue escrita en el corazón de Dios, guiada por su propósito y bendecida por su gracia.
+            </p>
+            
+            <hr class="story-divider">
+            
+            <p class="story-text">
+                Acompáñanos a celebrar el comienzo de nuestro para siempre.
+            </p>
+            
+            <div class="initials">G+R</div>
+            
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: CUENTA REGRESIVA -->
+    <section class="countdown-section">
+        <div class="lace-top-inverted">
+            <div class="lace-center-detail"></div>
+        </div>
+
+        <h2 class="countdown-title">La cuenta regresiva ¡Que emoción!</h2>
+
+        <div class="timer-container" id="countdown-timer">
+            <div class="time-box">
+                <span class="number" id="days">00</span>
+                <span class="label">Días</span>
+            </div>
+            <div class="time-box">
+                <span class="number" id="hours">00</span>
+                <span class="label">Horas</span>
+            </div>
+            <div class="time-box">
+                <span class="number" id="minutes">00</span>
+                <span class="label">Minutos</span>
+            </div>
+        </div>
+
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ceremonia+y+Recepción+de+Gis+y+Roy&dates=20271212T220000Z/20271213T040000Z&details=¡Acompáñanos+a+celebrar+el+comienzo+de+nuestro+para+siempre!&location=Casandrea+Country+Club,+Puerto+Colombia" target="_blank" class="calendar-btn">
+            <svg viewBox="0 0 24 24">
+                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/>
+            </svg>
+            Guardar Fecha
+        </a>
+        
+        <div class="lace-bottom">
+            <div class="lace-center-detail"></div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: UBICACIÓN -->
+    <section class="location-section">
+        <p class="event-time">12.12.2027 a las 17:00 HRS</p>
+        <h2 class="event-title">CEREMONIA Y RECEPCIÓN</h2>
+        
+        <div class="heart-divider">
+            <span class="line"></span>
+            <span class="heart">♥</span>
+            <span class="line"></span>
+        </div>
+        
+        <p class="event-place">Casandrea Country Club</p>
+        <p class="event-address">
+            Vía Sabanilla, Kilómetro 7 - 15,<br>
+            Puerto Colombia (cerca de Barranquilla)
+        </p>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Casandrea+Country+Club+Puerto+Colombia" target="_blank" class="maps-btn">
+            Cómo llegar
+        </a>
+    </section>
+
+    <!-- SECCIÓN 5: GALERÍA DE FOTOS ACTUALIZADA -->
+    <section class="gallery-section">
+        <h2 class="gallery-title">Nuestros momentos</h2>
+        
+        <div class="carousel-wrapper">
+            <div class="carousel-container" id="galeria">
+                <div class="carousel-track">
+                    <img src="pexels-vinicius-quaresma-511530024-32532547.jpg" alt="Foto Pareja 1" onclick="abrirLightbox(0)">
+                    <img src="pexels-vinicius-quaresma-511530024-32439850.jpg" alt="Foto Pareja 2" onclick="abrirLightbox(1)">
+                    <img src="pexels-vinicius-quaresma-511530024-32745238.jpg" alt="Foto Pareja 3" onclick="abrirLightbox(2)">
+                    <img src="pexels-vinicius-quaresma-511530024-32745235.jpg" alt="Foto Pareja 4" onclick="abrirLightbox(3)">
+                    <img src="pexels-vinicius-quaresma-511530024-32745234.jpg" alt="Foto Pareja 5" onclick="abrirLightbox(4)">
+                    <img src="pexels-vinicius-quaresma-511530024-32580236.jpg" alt="Foto Pareja 6" onclick="abrirLightbox(5)">
+                </div>
+            </div>
+        </div>
+        
+        <span class="swipe-hint">Desliza para ver más →</span>
+    </section>
+
+    <!-- VISOR DE IMÁGENES (LIGHTBOX) -->
+    <div id="miLightbox" class="lightbox">
+        <span class="close-lightbox" onclick="cerrarLightbox()">&times;</span>
+        
+        <div class="lightbox-inner">
+            <button class="lb-arrow lb-arrow-prev" onclick="cambiarFoto(-1)">&#10094;</button>
+            <img class="lightbox-content" id="imgLightbox" src="" alt="Imagen Ampliada">
+            <button class="lb-arrow lb-arrow-next" onclick="cambiarFoto(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 6: CÓDIGO DE VESTIMENTA -->
+    <section class="dresscode-section">
+        
+        <h2 class="dc-title-main">Código de Vestimenta</h2>
+        
+        <div class="heart-divider" style="margin: 0 auto 15px auto;">
+            <span class="line"></span>
+            <span class="heart">♥</span>
+            <span class="line"></span>
+        </div>
+        
+        <p class="dc-level">FORMAL</p>
+
+        <div class="dc-image-centered">
+            <img src="1000224141.png" alt="Vestimenta Formal">
+        </div>
+
+        <div class="reserved-colors-container">
+            <!-- Bloque Mujeres -->
+            <div class="rc-group">
+                <span class="rc-group-title">MUJERES</span>
+                <span class="rc-subtitle">COLORES A EVITAR</span>
+                <div class="rc-circles">
+                    <div class="rc-circle-item">
+                        <div class="rc-circle c-blanco"></div>
+                        <span class="rc-label">BLANCO</span>
+                    </div>
+                    <div class="rc-circle-item">
+                        <div class="rc-circle c-oliva"></div>
+                        <span class="rc-label">VERDE OLIVA</span>
+                    </div>
+                    <div class="rc-circle-item">
+                        <div class="rc-circle c-rojo"></div>
+                        <span class="rc-label">ROJO</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rc-divider">
+                <span class="rc-diamond">✧</span>
+            </div>
+
+            <!-- Bloque Hombres -->
+            <div class="rc-group">
+                <span class="rc-group-title">HOMBRES</span>
+                <span class="rc-subtitle">COLOR RESERVADO</span>
+                <div class="rc-circles">
+                    <div class="rc-circle-item">
+                        <div class="rc-circle c-gris"></div>
+                        <span class="rc-label">GRIS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+       <!-- SECCIÓN 7: DETALLES FINALES (Fondo Verde Oscuro) -->
+    <section class="details-section">
+        <div class="details-container">
+            
+            <!-- Bloque Cupos -->
+            <div class="detail-row">
+                <svg class="detail-icon-stroke" viewBox="0 0 24 24">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <div class="detail-content">
+                    <h3 class="detail-title">Cupos reservados para ti</h3>
+                    <div class="seats-box">
+                        <span class="seats-number">2</span>
+                        <span class="seats-label">Cupos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="heart-divider"><span class="line"></span><span class="heart" style="color: #d4c4a8;">♥</span><span class="line"></span></div>
+
+            <!-- Bloque Regalos -->
+            <div class="detail-row">
+                <svg class="detail-icon-stroke" viewBox="0 0 24 24">
+                    <path d="M20 12v10H4V12M22 7H2v5h20V7zM12 22V7M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="detail-content">
+                    <h3 class="detail-title">Sugerencia de regalo</h3>
+                    <p class="detail-text">
+                        Su presencia es nuestro mayor regalo.<br>
+                        Sin embargo, si desean tener un detalle<br>
+                        con nosotros, una contribución monetaria<br>
+                        será muy apreciada.
+                    </p>
+                    <div class="envelope-box">
+                        <span class="seats-label">Lluvia de sobres</span>
+                        <svg class="envelope-icon" viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22 6l-10 7L2 6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="heart-divider"><span class="line"></span><span class="heart" style="color: #d4c4a8;">♥</span><span class="line"></span></div>
+
+            <!-- Bloque Confirmación -->
+            <div class="detail-row">
+                <svg class="detail-icon-fill" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.01 2.01A9.97 9.97 0 0 0 2.03 12c0 1.63.4 3.2 1.15 4.6l-1.58 5.76 5.89-1.54a9.96 9.96 0 0 0 4.52 1.08h.01A9.98 9.98 0 0 0 22 12a10 10 0 0 0-9.99-9.99zm0 16.63a8.3 8.3 0 0 1-4.22-1.15l-.3-.18-3.13.82.84-3.05-.2-.32a8.3 8.3 0 0 1-1.28-4.46A8.34 8.34 0 0 1 12.01 3.67a8.33 8.33 0 0 1 8.32 8.33A8.34 8.34 0 0 1 12.01 18.64zm4.56-6.23c-.25-.13-1.48-.73-1.7-.81-.23-.08-.4-.13-.56.12-.17.25-.65.81-.8 1.0-.15.17-.3.2-.55.07-.25-.13-1.06-.39-2.02-1.25-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.38.11-.5.11-.11.25-.29.38-.44.13-.15.17-.25.25-.41.08-.17.04-.32-.02-.45-.06-.13-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.45.06-.68.32-.23.25-.88.86-.88 2.1 0 1.24.9 2.45 1.03 2.62.13.17 1.78 2.73 4.31 3.82 2.1.9 2.5.75 2.96.7.45-.06 1.48-.6 1.68-1.18.2-.58.2-.1.05-.28z"/>
+                </svg>
+                <div class="detail-content">
+                    <h3 class="detail-title">Confirmación de Asistencia</h3>
+                    <p class="detail-text">Por favor confirma tu asistencia antes del<br>1 de noviembre de 2027.</p>
+                    <a href="https://wa.me/573000000000" target="_blank" class="whatsapp-btn">Enviar Mensaje</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="adults-only">
+            <h3 class="detail-title" style="letter-spacing: 3px;">Recepción solo para adultos</h3>
+            <p class="detail-text" style="max-width: 450px; margin: 0 auto;">Esperamos que comprendan que nuestro gran día será una celebración exclusiva para adultos.</p>
+        </div>
+        
+        <div class="heart-divider" style="margin: 30px auto;"><span class="line"></span><span class="heart" style="font-size:1.5rem; color:#d4c4a8;">❦</span><span class="line"></span></div>
+
+        <p class="detail-title" style="letter-spacing: 4px; margin-top:20px;">Esperamos celebrar este día contigo</p>
+        <p class="closing-text">Gis & Roy</p>
+    </section>
+
+    <!-- FOTO FINAL A PANTALLA COMPLETA -->
+    <section class="footer-image-section">
+        <img src="pexels-vinicius-quaresma-511530024-32532549.jpg" alt="Foto de despedida Gis y Roy">
+    </section>
+
+    <!-- SCRIPTS -->
+    <script>
+        const weddingDate = new Date("Dec 12, 2027 17:00:00").getTime();
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+                
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+                
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown-timer").innerHTML = "<h2 class='countdown-title' style='color:#ffffff;'>¡Llegó el gran día!</h2>";
+            }
+        }, 1000); 
+
+        let indiceActual = 0;
+        let listaImagenes = [];
+
+        window.onload = function() {
+            const imagenesGaleria = document.querySelectorAll('.carousel-track img');
+            imagenesGaleria.forEach(img => {
+                listaImagenes.push(img.src);
+            });
+        };
+
+        function abrirLightbox(index) {
+            indiceActual = index;
+            document.getElementById('miLightbox').style.display = "block";
+            actualizarImagenLightbox();
+            document.body.style.overflow = "hidden";
+        }
+
+        function cerrarLightbox() {
+            document.getElementById('miLightbox').style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        function cambiarFoto(direccion) {
+            indiceActual += direccion;
+            
+            if (indiceActual >= listaImagenes.length) {
+                indiceActual = 0;
+            } else if (indiceActual < 0) {
+                indiceActual = listaImagenes.length - 1;
+            }
+            
+            actualizarImagenLightbox();
+        }
+
+        function actualizarImagenLightbox() {
+            const imgElement = document.getElementById('imgLightbox');
+            imgElement.style.animation = 'none';
+            imgElement.offsetHeight; 
+            imgElement.style.animation = null; 
+            imgElement.src = listaImagenes[indiceActual];
+        }
+    </script>
+
+</body>
+</html>
