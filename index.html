@@ -91,8 +91,8 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            /* FOTO PRINCIPAL ACTUALIZADA */
-            background-image: url('Copia de Post IG bulk cream_20261015_091200_0000.png'); 
+            /* FOTO PRINCIPAL ACTUALIZADA NUEVAMENTE */
+            background-image: url('Simple Minimalist Save the Date Wedding Invitation_20261014_092408_0000.png'); 
             background-size: cover;
             background-position: center;
             border: 6px solid #fdfdfd; 
@@ -838,10 +838,9 @@
             font-weight: normal;
         }
 
-        /* --- EFECTO NUBES (SCALLOPS) SOBRE LA FOTO FINAL --- */
         .lace-overlap-dark {
             position: absolute;
-            bottom: -19px; /* Solapa perfectamente la foto sin dejar línea blanca */
+            bottom: -19px; 
             left: 0;
             width: 100%;
             height: 20px;
@@ -851,18 +850,6 @@
             background-repeat: repeat-x;
             display: flex;
             justify-content: center;
-        }
-
-        .lace-center-overlap {
-            position: absolute;
-            top: -40px; 
-            width: 80px;
-            height: 80px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            z-index: 11;
-            background-image: radial-gradient(transparent 40%, rgba(200,200,200,0.3) 45%, transparent 50%);
-            background-size: 10px 10px;
         }
 
         /* --- FOTO FINAL PANTALLA COMPLETA --- */
@@ -935,7 +922,6 @@
             .rc-divider { display: flex; }
             .rc-diamond { font-size: 1rem; }
 
-            /* Ajustes finales de espaciado para móviles */
             .details-section { padding: 90px 15px 50px 15px; }
             .detail-icon-stroke, .detail-icon-fill { margin-bottom: 10px; width: 40px; height: 40px; }
             .detail-title { font-size: 0.95rem; }
@@ -946,6 +932,7 @@
     </style>
 </head>
 <body>
+
     <!-- SECCIÓN 1: Hero -->
     <section class="hero">
         <div class="content">
@@ -958,7 +945,8 @@
             
             <div class="date">12.12.2027</div>
             
-            <a href="#" class="rsvp-btn">RSVP NOW</a>
+            <!-- EL BOTÓN HERO AHORA TAMBIÉN DIRIGE A WHATSAPP -->
+            <a href="https://wa.me/573000000000" target="_blank" class="rsvp-btn">RSVP NOW</a>
         </div>
         
         <div class="lace-bottom">
@@ -972,7 +960,8 @@
             
             <div class="audio-player-container">
                 <audio controls>
-                    <source src="nuestra-cancion.mp3" type="audio/mpeg">
+                    <!-- ARCHIVO DE AUDIO ACTUALIZADO -->
+                    <source src="Lasso - Hasta Ese Día.mp3" type="audio/mpeg">
                     Tu navegador no soporta el elemento de audio.
                 </audio>
             </div>
@@ -1052,15 +1041,16 @@
         </a>
     </section>
 
-    <!-- SECCIÓN 5: GALERÍA DE FOTOS ACTUALIZADA -->
+    <!-- SECCIÓN 5: GALERÍA DE FOTOS -->
     <section class="gallery-section">
         <h2 class="gallery-title">Nuestros momentos</h2>
         
         <div class="carousel-wrapper">
             <div class="carousel-container" id="galeria">
                 <div class="carousel-track">
-                    <img src="pexels-vinicius-quaresma-511530024-32532547.jpg" alt="Foto Pareja 1" onclick="abrirLightbox(0)">
-                    <img src="pexels-vinicius-quaresma-511530024-32439850.jpg" alt="Foto Pareja 2" onclick="abrirLightbox(1)">
+                    <!-- FOTO 1 Y 2 INTERCAMBIADAS -->
+                    <img src="pexels-vinicius-quaresma-511530024-32439850.jpg" alt="Foto Pareja 1" onclick="abrirLightbox(0)">
+                    <img src="pexels-vinicius-quaresma-511530024-32532547.jpg" alt="Foto Pareja 2" onclick="abrirLightbox(1)">
                     <img src="pexels-vinicius-quaresma-511530024-32745238.jpg" alt="Foto Pareja 3" onclick="abrirLightbox(2)">
                     <img src="pexels-vinicius-quaresma-511530024-32745235.jpg" alt="Foto Pareja 4" onclick="abrirLightbox(3)">
                     <img src="pexels-vinicius-quaresma-511530024-32745234.jpg" alt="Foto Pareja 5" onclick="abrirLightbox(4)">
@@ -1139,12 +1129,12 @@
         </div>
     </section>
 
-    <!-- SECCIÓN 7: DETALLES FINALES (Fondo Verde Oscuro con Encajes superpuestos a la foto) -->
+    <!-- SECCIÓN 7: DETALLES FINALES -->
     <section class="details-section">
         
-        <!-- Encaje Superior Invertido -->
+        <!-- ENCAJE SUPERIOR SIN CÍRCULO BLANCO -->
         <div class="lace-top-inverted">
-            <div class="lace-center-detail"></div>
+            <!-- El círculo fue eliminado -->
         </div>
 
         <div class="details-container">
@@ -1214,12 +1204,13 @@
         
         <div class="heart-divider" style="margin: 30px auto;"><span class="line"></span><span class="heart" style="font-size:1.5rem; color:#d4c4a8;">❦</span><span class="line"></span></div>
 
-        <p class="detail-title" style="letter-spacing: 4px; margin-top:20px;">Esperamos celebrar este día contigo</p>
+        <!-- SALTO DE LÍNEA AÑADIDO EN LA FRASE DE DESPEDIDA -->
+        <p class="detail-title" style="letter-spacing: 4px; margin-top:20px;">Esperamos celebrar<br>este día contigo</p>
         <p class="closing-text">Gis & Roy</p>
 
-        <!-- EFECTO NUBES (SCALLOPS) PERFECTAMENTE SUPERPUESTO A LA FOTO INFERIOR -->
+        <!-- ENCAJE INFERIOR SIN CÍRCULO BLANCO -->
         <div class="lace-overlap-dark">
-            <div class="lace-center-overlap"></div>
+            <!-- El círculo fue eliminado -->
         </div>
     </section>
 
@@ -1227,6 +1218,7 @@
     <section class="footer-image-section">
         <img src="pexels-vinicius-quaresma-511530024-32532549.jpg" alt="Foto de despedida Gis y Roy">
     </section>
+
     <!-- SCRIPTS -->
     <script>
         const weddingDate = new Date("Dec 12, 2027 17:00:00").getTime();
