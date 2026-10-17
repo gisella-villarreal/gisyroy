@@ -851,7 +851,7 @@
             justify-content: center;
         }
 
-        /* --- SECCIÓN 8: BUENOS DESEOS / FORO --- */
+        /* --- SECCIÓN 8: BUENOS DESEOS (FORO DE TEXTO) --- */
         .guestbook-section {
             background-color: #ffffff;
             padding: 80px 20px;
@@ -950,9 +950,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .comment-item:last-child {
-            border-bottom: none;
-        }
+        .comment-item:last-child { border-bottom: none; }
 
         .comment-author {
             font-weight: 600;
@@ -964,26 +962,107 @@
             gap: 8px;
         }
 
-        .comment-author svg {
-            width: 16px;
-            height: 16px;
-            fill: #d4c4a8;
+        .comment-author svg { width: 16px; height: 16px; fill: #d4c4a8; }
+        .comment-text { font-size: 0.9rem; color: #666666; margin: 0; line-height: 1.5; }
+        .comment-date { font-size: 0.75rem; color: #aaaaaa; margin-top: 8px; display: block; }
+
+
+        /* --- SECCIÓN 9: COMPARTE TU VERSIÓN DE LA BODA (ÁLBUM DE INVITADOS) --- */
+        .guest-photos-section {
+            background-color: #faf9f6;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-top: 1px solid #e8e4dc;
         }
 
-        .comment-text {
-            font-size: 0.9rem;
+        .gp-container {
+            width: 100%;
+            max-width: 600px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid #eeeeee;
+            margin-bottom: 40px;
+        }
+
+        .file-upload-wrapper {
+            position: relative;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .file-upload-wrapper label {
+            display: block;
+            font-size: 0.85rem;
+            color: #4a4a4a;
+            margin-bottom: 5px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .gp-input-file {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px dashed #d4c4a8;
+            border-radius: 5px;
+            background-color: #faf9f6;
+            font-family: 'Lora', serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        /* Muro de Fotos Compartidas */
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 20px;
+        }
+
+        .photo-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid #eeeeee;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .photo-card-body {
+            padding: 15px;
+        }
+
+        .photo-card-author {
+            font-weight: 600;
+            color: #292c1b;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .photo-card-text {
+            font-size: 0.85rem;
             color: #666666;
             margin: 0;
-            line-height: 1.5;
-        }
-
-        .comment-date {
-            font-size: 0.75rem;
-            color: #aaaaaa;
-            margin-top: 8px;
-            display: block;
-        }
-
+            line-height: 1.4;
+            }
         /* --- FOTO FINAL PANTALLA COMPLETA --- */
         .footer-image-section {
             position: relative;
@@ -1062,11 +1141,13 @@
             
             .guestbook-section { padding: 60px 15px; }
             .guestbook-title { font-size: 3.2rem; }
-            .guestbook-container { padding: 20px 15px; }
+            .guestbook-container, .gp-container { padding: 20px 15px; }
+            .photos-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+
     <!-- SECCIÓN 1: Hero -->
     <section class="hero">
         <div class="content">
@@ -1333,7 +1414,7 @@
         <div class="lace-overlap-dark"></div>
     </section>
 
-    <!-- SECCIÓN 8: BUENOS DESEOS / FORO -->
+    <!-- SECCIÓN 8: BUENOS DESEOS (FORO DE TEXTO) -->
     <section class="guestbook-section">
         <h2 class="guestbook-title">Buenos Deseos</h2>
         <div class="heart-divider" style="margin: 0 auto 15px auto;">
@@ -1349,8 +1430,34 @@
             </form>
 
             <div class="comments-list" id="lista-comentarios">
-                <!-- Los comentarios se insertarán aquí dinámicamente -->
+                <!-- Los comentarios de texto se insertarán aquí -->
             </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 9: COMPARTE TU VERSIÓN DE LA BODA (ÁLBUM DE FOTOS DE INVITADOS) -->
+    <section class="guest-photos-section">
+        <h2 class="guestbook-title">Comparte tu versión de la boda</h2>
+        <div class="heart-divider" style="margin: 0 auto 15px auto;">
+            <span class="line"></span><span class="heart">♥</span><span class="line"></span>
+        </div>
+        <p class="guestbook-subtitle">Sube las fotos que hayas tomado durante la celebración para que todos podamos disfrutarlas.</p>
+
+        <div class="gp-container">
+            <form id="form-fotos">
+                <input type="text" id="gp-nombre" class="gb-input" placeholder="Tu nombre" required>
+                <textarea id="gp-mensaje" class="gb-mensaje gb-textarea" placeholder="Escribe algo sobre este momento..." required></textarea>
+                <div class="file-upload-wrapper">
+                    <label>Selecciona tu foto:</label>
+                    <input type="file" id="gp-archivo" class="gp-input-file" accept="image/*" required>
+                </div>
+                <button type="submit" id="btn-publicar-foto" class="gb-btn">Subir mi foto</button>
+            </form>
+        </div>
+
+        <!-- Muro de fotos subidas por invitados -->
+        <div class="photos-grid" id="muro-fotos">
+            <!-- Las fotos publicadas aparecerán aquí en tarjetas -->
         </div>
     </section>
 
@@ -1390,6 +1497,8 @@
             imagenesGaleria.forEach(img => {
                 listaImagenes.push(img.src);
             });
+            // Cargar datos del servidor al abrir la página
+            cargarDatosForoYFotos();
         };
 
         function abrirLightbox(index) {
@@ -1423,16 +1532,19 @@
         }
 
 
-        // --- 3. LÓGICA DEL FORO CONECTADO A GOOGLE SHEETS ---
-        
-        // Enlace de Google Sheets integrado correctamente
+        // --- 3. CONEXIÓN CON GOOGLE SHEETS (FORO Y FOTOS) ---
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyvQZtTpJE23k1qq7jLH7nzgDctcc_755JmodNsIgTp0_l-e5eqlaCRRw3xyuIqc7zr/exec'; 
 
+        // Elementos del Foro de Texto
         const formDeseos = document.getElementById('form-deseos');
         const listaComentarios = document.getElementById('lista-comentarios');
-        const btnSubmit = document.getElementById('btn-publicar');
+        const btnDeseos = document.getElementById('btn-publicar');
 
-        // Formatear fecha
+        // Elementos del Muro de Fotos
+        const formFotos = document.getElementById('form-fotos');
+        const muroFotos = document.getElementById('muro-fotos');
+        const btnFotos = document.getElementById('btn-publicar-foto');
+
         function formatearFecha(fechaStr) {
             if(!fechaStr) return '';
             const fecha = new Date(fechaStr);
@@ -1440,14 +1552,12 @@
             return fecha.toLocaleDateString('es-ES', opciones);
         }
 
-        // Mostrar un comentario en la lista
+        // Mostrar comentario de texto
         function mostrarComentario(nombre, mensaje, fecha = '', alPrincipio = false) {
-            const nuevoComentario = document.createElement('div');
-            nuevoComentario.className = 'comment-item';
-            
+            const div = document.createElement('div');
+            div.className = 'comment-item';
             let fechaHTML = fecha ? `<span class="comment-date">${formatearFecha(fecha)}</span>` : '';
-
-            nuevoComentario.innerHTML = `
+            div.innerHTML = `
                 <div class="comment-author">
                     <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                     ${nombre}
@@ -1455,52 +1565,124 @@
                 <p class="comment-text">${mensaje}</p>
                 ${fechaHTML}
             `;
-            if(alPrincipio) {
-                listaComentarios.prepend(nuevoComentario);
-            } else {
-                listaComentarios.appendChild(nuevoComentario);
+            if(alPrincipio) listaComentarios.prepend(div);
+            else listaComentarios.appendChild(div);
+        }
+
+        // Mostrar tarjeta de foto subida
+        function mostrarTarjetaFoto(nombre, mensaje, fotoUrl, alPrincipio = false) {
+            if(!fotoUrl) return; // Si la fila no tiene foto, no es de esta sección
+            
+            // Convertir enlace de Google Drive a enlace de visualización directa si es necesario
+            let urlDirecta = fotoUrl;
+            if(fotoUrl.includes('drive.google.com')) {
+                const match = fotoUrl.match(/\/d\/(.*?)\//);
+                if(match && match[1]) {
+                    urlDirecta = `https://lh3.googleusercontent.com/d/${match[1]}`;
+                }
+            }
+
+            const card = document.createElement('div');
+            card.className = 'photo-card';
+            card.innerHTML = `
+                <img src="${urlDirecta}" alt="Foto de ${nombre}" onclick="window.open('${urlDirecta}', '_blank')">
+                <div class="photo-card-body">
+                    <div class="photo-card-author">${nombre}</div>
+                    <p class="photo-card-text">${mensaje}</p>
+                </div>
+            `;
+            if(alPrincipio) muroFotos.prepend(card);
+            else muroFotos.appendChild(card);
+        }
+
+        // Cargar todo al iniciar
+        function cargarDatosForoYFotos() {
+            if(scriptURL) {
+                fetch(scriptURL)
+                    .then(res => res.json())
+                    .then(data => {
+                        data.reverse().forEach(row => {
+                            if(row.foto) {
+                                // Es una entrada de foto de invitados
+                                mostrarTarjetaFoto(row.nombre, row.mensaje, row.foto);
+                            } else if(row.nombre && row.mensaje) {
+                                // Es un deseo de texto tradicional
+                                mostrarComentario(row.nombre, row.mensaje, row.fecha);
+                            }
+                        });
+                    })
+                    .catch(err => console.error('Error cargando datos:', err));
             }
         }
 
-        // Cargar los comentarios guardados en el Excel al abrir la página
-        if(scriptURL) {
-            fetch(scriptURL)
-                .then(response => response.json())
-                .then(data => {
-                    data.reverse().forEach(row => {
-                        if(row[0] && row[1]) {
-                           mostrarComentario(row[0], row[1], row[2]);
-                        }
-                    });
-                })
-                .catch(error => console.error('Error cargando los mensajes:', error));
-        }
-
-        // Enviar un nuevo comentario al Excel
+        // Enviar Texto (Buenos Deseos)
         formDeseos.addEventListener('submit', e => {
             e.preventDefault();
-            btnSubmit.innerText = 'Publicando...';
-            btnSubmit.disabled = true;
+            btnDeseos.innerText = 'Publicando...';
+            btnDeseos.disabled = true;
 
             const nombre = document.getElementById('gb-nombre').value;
             const mensaje = document.getElementById('gb-mensaje').value;
 
-            let formData = new FormData();
-            formData.append('Nombre', nombre);
-            formData.append('Mensaje', mensaje);
+            // Enviamos como JSON plano sin archivo
+            const payload = { nombre: nombre, mensaje: mensaje };
 
-            fetch(scriptURL, { method: 'POST', body: formData})
-                .then(response => {
-                    mostrarComentario(nombre, mensaje, new Date(), true); 
+            fetch(scriptURL, { method: 'POST', body: JSON.stringify(payload) })
+                .then(res => res.json())
+                .then(res => {
+                    mostrarComentario(nombre, mensaje, new Date(), true);
                     formDeseos.reset();
-                    btnSubmit.innerText = 'Publicar deseo';
-                    btnSubmit.disabled = false;
+                    btnDeseos.innerText = 'Publicar deseo';
+                    btnDeseos.disabled = false;
                 })
-                .catch(error => {
-                    console.error('Error al guardar!', error.message);
-                    btnSubmit.innerText = 'Error. Intenta de nuevo';
-                    btnSubmit.disabled = false;
+                .catch(err => {
+                    console.error(err);
+                    btnDeseos.innerText = 'Error. Intenta de nuevo';
+                    btnDeseos.disabled = false;
                 });
+        });
+
+        // Enviar Foto del invitado
+        formFotos.addEventListener('submit', e => {
+            e.preventDefault();
+            btnFotos.innerText = 'Subiendo foto...';
+            btnFotos.disabled = true;
+
+            const nombre = document.getElementById('gp-nombre').value;
+            const mensaje = document.getElementById('gp-mensaje').value;
+            const archivoInput = document.getElementById('gp-archivo');
+            const file = archivoInput.files[0];
+
+            if(!file) return;
+
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = function () {
+                const payload = {
+                    nombre: nombre,
+                    mensaje: mensaje,
+                    fileData: reader.result,
+                    fileName: file.name,
+                    fileType: file.type
+                };
+
+                fetch(scriptURL, { method: 'POST', body: JSON.stringify(payload) })
+                    .then(res => res.json())
+                    .then(res => {
+                        // Recargamos o mostramos directamente usando la vista previa local temporal mientras sincroniza
+                        const urlTemporal = URL.createObjectURL(file);
+                        mostrarTarjetaFoto(nombre, mensaje, urlTemporal, true);
+                        formFotos.reset();
+                        btnFotos.innerText = 'Subir mi foto';
+                        btnFotos.disabled = false;
+                        alert('¡Foto subida con éxito! Gracias por compartir tu momento.');
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        btnFotos.innerText = 'Error al subir. Intenta de nuevo';
+                        btnFotos.disabled = false;
+                    });
+            };
         });
     </script>
 
