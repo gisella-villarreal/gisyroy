@@ -967,7 +967,7 @@
         .comment-date { font-size: 0.75rem; color: #aaaaaa; margin-top: 8px; display: block; }
 
 
-        /* --- SECCIÓN 9: COMPARTE TU VERSIÓN DE LA BODA (ÁLBUM DE INVITADOS) --- */
+        /* --- SECCIÓN 9: COMPARTE TU VERSIÓN DE LA BODA (ÁLBUM DE FOTOS DE INVITADOS) --- */
         .guest-photos-section {
             background-color: #faf9f6;
             padding: 80px 20px;
@@ -1062,7 +1062,9 @@
             color: #666666;
             margin: 0;
             line-height: 1.4;
-            }
+        }
+
+
         /* --- FOTO FINAL PANTALLA COMPLETA --- */
         .footer-image-section {
             position: relative;
@@ -1147,7 +1149,6 @@
     </style>
 </head>
 <body>
-
     <!-- SECCIÓN 1: Hero -->
     <section class="hero">
         <div class="content">
@@ -1383,6 +1384,10 @@
                             <path d="M22 6l-10 7L2 6" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
+                    <!-- BOTÓN DE APORTE DIGITAL AÑADIDO -->
+                    <a href="#" target="_blank" class="whatsapp-btn" style="margin-top: 15px;">
+                        Hacer Aporte Digital
+                    </a>
                 </div>
             </div>
 
@@ -1571,9 +1576,8 @@
 
         // Mostrar tarjeta de foto subida
         function mostrarTarjetaFoto(nombre, mensaje, fotoUrl, alPrincipio = false) {
-            if(!fotoUrl) return; // Si la fila no tiene foto, no es de esta sección
+            if(!fotoUrl) return; 
             
-            // Convertir enlace de Google Drive a enlace de visualización directa si es necesario
             let urlDirecta = fotoUrl;
             if(fotoUrl.includes('drive.google.com')) {
                 const match = fotoUrl.match(/\/d\/(.*?)\//);
@@ -1603,10 +1607,8 @@
                     .then(data => {
                         data.reverse().forEach(row => {
                             if(row.foto) {
-                                // Es una entrada de foto de invitados
                                 mostrarTarjetaFoto(row.nombre, row.mensaje, row.foto);
                             } else if(row.nombre && row.mensaje) {
-                                // Es un deseo de texto tradicional
                                 mostrarComentario(row.nombre, row.mensaje, row.fecha);
                             }
                         });
@@ -1624,7 +1626,6 @@
             const nombre = document.getElementById('gb-nombre').value;
             const mensaje = document.getElementById('gb-mensaje').value;
 
-            // Enviamos como JSON plano sin archivo
             const payload = { nombre: nombre, mensaje: mensaje };
 
             fetch(scriptURL, { method: 'POST', body: JSON.stringify(payload) })
@@ -1669,7 +1670,6 @@
                 fetch(scriptURL, { method: 'POST', body: JSON.stringify(payload) })
                     .then(res => res.json())
                     .then(res => {
-                        // Recargamos o mostramos directamente usando la vista previa local temporal mientras sincroniza
                         const urlTemporal = URL.createObjectURL(file);
                         mostrarTarjetaFoto(nombre, mensaje, urlTemporal, true);
                         formFotos.reset();
