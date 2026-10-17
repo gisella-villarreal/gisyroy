@@ -851,14 +851,16 @@
             justify-content: center;
         }
 
-        /* --- SECCIÓN 8: BUENOS DESEOS / FORO (ELFSIGHT) --- */
+        /* --- SECCIÓN 8: BUENOS DESEOS / FORO --- */
         .guestbook-section {
-            background-color: #faf9f6; 
+            background-color: #ffffff;
             padding: 80px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .guestbook-title {
@@ -877,10 +879,109 @@
             line-height: 1.5;
         }
 
-        .elfsight-container {
+        .guestbook-container {
             width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 600px;
+            background: #faf9f6;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid #eeeeee;
+        }
+
+        .gb-input, .gb-textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-family: 'Lora', serif;
+            font-size: 0.9rem;
+            color: #4a4a4a;
+            background-color: #ffffff;
+        }
+
+        .gb-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .gb-btn {
+            background-color: #292c1b;
+            color: #ffffff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Lora', serif;
+        }
+
+        .gb-btn:hover {
+            background-color: #d4c4a8;
+            color: #292c1b;
+        }
+
+        .comments-list {
+            margin-top: 40px;
+            text-align: left;
+            width: 100%;
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .comments-list::-webkit-scrollbar { width: 6px; }
+        .comments-list::-webkit-scrollbar-thumb { background-color: #d4c4a8; border-radius: 10px; }
+
+        .comment-item {
+            border-bottom: 1px solid #eeeeee;
+            padding: 15px 0;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .comment-item:last-child {
+            border-bottom: none;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: #292c1b;
+            font-size: 1rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .comment-author svg {
+            width: 16px;
+            height: 16px;
+            fill: #d4c4a8;
+        }
+
+        .comment-text {
+            font-size: 0.9rem;
+            color: #666666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .comment-date {
+            font-size: 0.75rem;
+            color: #aaaaaa;
+            margin-top: 8px;
+            display: block;
         }
 
         /* --- FOTO FINAL PANTALLA COMPLETA --- */
@@ -888,7 +989,7 @@
             position: relative;
             width: 100%;
             line-height: 0; 
-            background-color: #faf9f6; 
+            background-color: #ffffff; 
             z-index: 1;
         }
 
@@ -897,7 +998,6 @@
             height: auto;
             display: block;
         }
-
 
         /* Responsividad para móviles */
         @media (max-width: 768px) {
@@ -962,11 +1062,11 @@
             
             .guestbook-section { padding: 60px 15px; }
             .guestbook-title { font-size: 3.2rem; }
+            .guestbook-container { padding: 20px 15px; }
         }
     </style>
 </head>
 <body>
-
     <!-- SECCIÓN 1: Hero -->
     <section class="hero">
         <div class="content">
@@ -1233,18 +1333,24 @@
         <div class="lace-overlap-dark"></div>
     </section>
 
-    <!-- SECCIÓN 8: BUENOS DESEOS / FORO ELFSIGHT -->
+    <!-- SECCIÓN 8: BUENOS DESEOS / FORO -->
     <section class="guestbook-section">
         <h2 class="guestbook-title">Buenos Deseos</h2>
         <div class="heart-divider" style="margin: 0 auto 15px auto;">
-            <span class="line"></span><span class="heart" style="color: #a38758;">♥</span><span class="line"></span>
+            <span class="line"></span><span class="heart">♥</span><span class="line"></span>
         </div>
         <p class="guestbook-subtitle">Déjanos un mensaje para recordar este día por siempre.</p>
 
-        <div class="elfsight-container">
-            <!-- Elfsight Comments | Untitled Comments -->
-            <script src="https://elfsightcdn.com/platform.js" async></script>
-            <div class="elfsight-app-f204b068-024a-451f-b192-e55ec92d9066" data-elfsight-app-lazy></div>
+        <div class="guestbook-container">
+            <form id="form-deseos">
+                <input type="text" id="gb-nombre" class="gb-input" placeholder="Tu nombre y apellido" required>
+                <textarea id="gb-mensaje" class="gb-textarea" placeholder="Escribe aquí tus buenos deseos para nosotros..." required></textarea>
+                <button type="submit" id="btn-publicar" class="gb-btn">Publicar deseo</button>
+            </form>
+
+            <div class="comments-list" id="lista-comentarios">
+                <!-- Los comentarios se insertarán aquí dinámicamente -->
+            </div>
         </div>
     </section>
 
@@ -1255,6 +1361,7 @@
 
     <!-- SCRIPTS -->
     <script>
+        // --- 1. CUENTA REGRESIVA ---
         const weddingDate = new Date("Dec 12, 2027 17:00:00").getTime();
         const countdownFunction = setInterval(function() {
             const now = new Date().getTime();
@@ -1274,6 +1381,7 @@
             }
         }, 1000); 
 
+        // --- 2. LÓGICA DEL LIGHTBOX CON GALERÍA NAVEGABLE ---
         let indiceActual = 0;
         let listaImagenes = [];
 
@@ -1298,13 +1406,11 @@
 
         function cambiarFoto(direccion) {
             indiceActual += direccion;
-            
             if (indiceActual >= listaImagenes.length) {
                 indiceActual = 0;
             } else if (indiceActual < 0) {
                 indiceActual = listaImagenes.length - 1;
             }
-            
             actualizarImagenLightbox();
         }
 
@@ -1315,6 +1421,87 @@
             imgElement.style.animation = null; 
             imgElement.src = listaImagenes[indiceActual];
         }
+
+
+        // --- 3. LÓGICA DEL FORO CONECTADO A GOOGLE SHEETS ---
+        
+        // Enlace de Google Sheets integrado correctamente
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyvQZtTpJE23k1qq7jLH7nzgDctcc_755JmodNsIgTp0_l-e5eqlaCRRw3xyuIqc7zr/exec'; 
+
+        const formDeseos = document.getElementById('form-deseos');
+        const listaComentarios = document.getElementById('lista-comentarios');
+        const btnSubmit = document.getElementById('btn-publicar');
+
+        // Formatear fecha
+        function formatearFecha(fechaStr) {
+            if(!fechaStr) return '';
+            const fecha = new Date(fechaStr);
+            const opciones = { day: 'numeric', month: 'long', year: 'numeric' };
+            return fecha.toLocaleDateString('es-ES', opciones);
+        }
+
+        // Mostrar un comentario en la lista
+        function mostrarComentario(nombre, mensaje, fecha = '', alPrincipio = false) {
+            const nuevoComentario = document.createElement('div');
+            nuevoComentario.className = 'comment-item';
+            
+            let fechaHTML = fecha ? `<span class="comment-date">${formatearFecha(fecha)}</span>` : '';
+
+            nuevoComentario.innerHTML = `
+                <div class="comment-author">
+                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    ${nombre}
+                </div>
+                <p class="comment-text">${mensaje}</p>
+                ${fechaHTML}
+            `;
+            if(alPrincipio) {
+                listaComentarios.prepend(nuevoComentario);
+            } else {
+                listaComentarios.appendChild(nuevoComentario);
+            }
+        }
+
+        // Cargar los comentarios guardados en el Excel al abrir la página
+        if(scriptURL) {
+            fetch(scriptURL)
+                .then(response => response.json())
+                .then(data => {
+                    data.reverse().forEach(row => {
+                        if(row[0] && row[1]) {
+                           mostrarComentario(row[0], row[1], row[2]);
+                        }
+                    });
+                })
+                .catch(error => console.error('Error cargando los mensajes:', error));
+        }
+
+        // Enviar un nuevo comentario al Excel
+        formDeseos.addEventListener('submit', e => {
+            e.preventDefault();
+            btnSubmit.innerText = 'Publicando...';
+            btnSubmit.disabled = true;
+
+            const nombre = document.getElementById('gb-nombre').value;
+            const mensaje = document.getElementById('gb-mensaje').value;
+
+            let formData = new FormData();
+            formData.append('Nombre', nombre);
+            formData.append('Mensaje', mensaje);
+
+            fetch(scriptURL, { method: 'POST', body: formData})
+                .then(response => {
+                    mostrarComentario(nombre, mensaje, new Date(), true); 
+                    formDeseos.reset();
+                    btnSubmit.innerText = 'Publicar deseo';
+                    btnSubmit.disabled = false;
+                })
+                .catch(error => {
+                    console.error('Error al guardar!', error.message);
+                    btnSubmit.innerText = 'Error. Intenta de nuevo';
+                    btnSubmit.disabled = false;
+                });
+        });
     </script>
 
 </body>
